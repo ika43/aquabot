@@ -154,6 +154,7 @@ async function receivedMessage(event) {
                     }
                 })
                 helpers.finishUserText(senderID);
+                break;
             case 'Reset Alerts':
                 sendToApiAi(senderID, 'Reset Alerts');
                 break;
