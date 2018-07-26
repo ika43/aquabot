@@ -39,5 +39,5 @@ new CronJob('* * * * * *', function() {
   }, null, true, 'America/Los_Angeles'); */
 
   server.listen(process.env.PORT || 3000, function () {
-    console.log("App is running on port " + port);
+    console.log("App is running on port ");
 });
