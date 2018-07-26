@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-var CronJob = require('cron').CronJob;
+const server = require('http').Server(app) 
 
 require('dotenv').config();
 
@@ -38,4 +38,6 @@ new CronJob('* * * * * *', function() {
     console.log('You will see this message every second');
   }, null, true, 'America/Los_Angeles'); */
 
-app.listen(process.env.PORT);
+  server.listen(process.env.PORT || 3000, function () {
+    console.log("App is running on port " + port);
+});
