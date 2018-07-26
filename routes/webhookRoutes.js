@@ -144,7 +144,7 @@ async function receivedMessage(event) {
                 })
                 helpers.finishUserText(senderID);
                 break;
-            case '3 times a day':
+            case 'three times a day':
                 userController.update(senderID, 3, (err, user) => {
                     if (err) {
                         console.log(err);
