@@ -132,7 +132,6 @@ async function receivedMessage(event) {
                     }
                 })
                 helpers.finishUserText(senderID);
-                sendToApiAi(senderID, 'menu');
                 break;
             case 'twice a day':
                 userController.update(senderID, 2, (err, user) => {
@@ -144,7 +143,6 @@ async function receivedMessage(event) {
                     }
                 })
                 helpers.finishUserText(senderID);
-                sendToApiAi(senderID, 'menu');
                 break;
             case '3 times a day':
                 userController.update(senderID, 3, (err, user) => {
@@ -156,7 +154,6 @@ async function receivedMessage(event) {
                     }
                 })
                 helpers.finishUserText(senderID);
-                sendToApiAi(senderID, 'menu');
             case 'Reset Alerts':
                 sendToApiAi(senderID, 'Reset Alerts');
                 break;

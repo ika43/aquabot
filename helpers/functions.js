@@ -17,7 +17,7 @@ exports.finishUserText = function (userId) {
 
 			if (user.first_name) {
 				console.log("FB user: %s %s, %s", user.first_name, user.last_name, user.gender);
-				faceFunctions.sendTextMessage(userId, `Thanks ${user.first_name} until next reminder!`);
+				faceFunctions.sendTextMessage(userId, `Thanks ${user.first_name} until next reminder! If you want to change something type menu!`);
 			} else {
 				console.log("Cannot get data for fb user with id",
 					userId);
