@@ -313,7 +313,7 @@ rule2.dayOfWeek = [5, 6, 0, 1, 2, 3, 4];
 rule2.hour = 20;
 rule2.minute = 1;
 cron.scheduleJob(rule2, function () {
-    userModel.find({ waterDaily: 3 }).exec(function (err, models) {
+    userModel.find({}).exec(function (err, models) {
         if (err) {
             console.log(err);
 
@@ -344,9 +344,10 @@ cron.scheduleJob(rule2, function () {
 
         } else {
             models.map(item => {
-                faceFunctions.sendImageMessage(item.senderId, 'https://s1.piq.land/2014/07/21/vQv6l4zX8P6Vwv9sAYQy4ehu_400x400.png')
-                faceFunctions.sendTextMessage(item.senderId, 'Good Morning it\'s time for a glass of water!');
-
+                if (item.waterDaily !== 0) {
+                    faceFunctions.sendImageMessage(item.senderId, 'https://s1.piq.land/2014/07/21/vQv6l4zX8P6Vwv9sAYQy4ehu_400x400.png')
+                    faceFunctions.sendTextMessage(item.senderId, 'Good Morning it\'s time for a glass of water!');
+                }
             })
 
         }
