@@ -132,7 +132,7 @@ async function receivedMessage(event) {
                     }
                 })
                 helpers.finishUserText(senderID);
-                faceFunctions(senderID, 'If you want to see menu just type menu');
+                helpers.faceFunctions(senderID, 'If you want to see menu just type menu');
                 break;
             case 'twice a day':
                 userController.update(senderID, 2, (err, user) => {
@@ -144,6 +144,8 @@ async function receivedMessage(event) {
                     }
                 })
                 helpers.finishUserText(senderID);
+
+                helpers.faceFunctions(senderID, 'If you want to see menu just type menu');
                 break;
             case '3 times a day':
                 userController.update(senderID, 3, (err, user) => {
@@ -155,11 +157,13 @@ async function receivedMessage(event) {
                     }
                 })
                 helpers.finishUserText(senderID);
+
+                helpers.faceFunctions(senderID, 'If you want to see menu just type menu');
             case 'Reset Alerts':
                 sendToApiAi(senderID, 'Reset Alerts');
                 break;
             case 'Unsubscribe':
-                userController.update(senderID, 0 , (err, user) => {
+                userController.update(senderID, 0, (err, user) => {
                     if (err) {
                         console.log(err);
                         faceFunctions.sendTextMessage(senderID, 'Soory we have problem with our service, please try later')
